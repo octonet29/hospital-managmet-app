@@ -11,13 +11,13 @@ export default function SignUp() {
 				<Text className="text-3xl font-bold text-blue-600 mb-10">Sign Up</Text>
 
 				<View className="w-full mb-6">
-					<Text className="text-[17px] font-semibold mb-2">Phone</Text>
-					<View className="flex-row items-center border border-gray-300 rounded-full px-4">
-						<Ionicons name="call" size={20} color="gray" />
+					<Text className="text-[17px] font-semibold mb-2">Username</Text>
+					<View className="flex-row items-center border  bg-[#F6F8FA] border-gray-300 rounded-full px-4">
+						<Ionicons name="person" size={20} color="gray" />
 						<TextInput
-							keyboardType="phone-pad"
+							keyboardType="default"
 							className="flex-1 h-12 px-3"
-							placeholder="+993"
+							placeholder="Username"
 							placeholderTextColor="#9ca3af"
 						/>
 					</View>
@@ -25,7 +25,7 @@ export default function SignUp() {
 
 				<View className="w-full mb-6">
 					<Text className="text-[17px] font-semibold mb-2">Phone</Text>
-					<View className="flex-row items-center border border-gray-300 rounded-full px-4">
+					<View className="flex-row items-center border  bg-[#F6F8FA] border-gray-300 rounded-full px-4">
 						<Ionicons name="call" size={20} color="gray" />
 						<TextInput
 							keyboardType="phone-pad"
@@ -38,7 +38,7 @@ export default function SignUp() {
 
 				<View className="w-full mb-8">
 					<Text className="text-[17px] font-semibold mb-2">Password</Text>
-					<View className="flex-row items-center border border-gray-300 rounded-full px-4">
+					<View className="flex-row items-center border  bg-[#F6F8FA] border-gray-300 rounded-full px-4">
 						<Ionicons name="lock-closed" size={20} color="gray" />
 						<TextInput
 							secureTextEntry={true}
@@ -51,7 +51,7 @@ export default function SignUp() {
 
 				<TouchableOpacity className="bg-blue-600 w-full py-3 rounded-full shadow-md">
 					<Text className="text-center text-white font-semibold text-lg">
-						Sign In
+						Sign Up
 					</Text>
 				</TouchableOpacity>
 
@@ -61,7 +61,7 @@ export default function SignUp() {
 						router.replace("/(auth)/signIn")
 					}}
 				>
-					<Text className="text-blue-500">Don’t have an account? Sign Up</Text>
+					<Text className="text-blue-500">Have an account? Sign In</Text>
 				</TouchableOpacity>
 			</View>
 		</SafeAreaView>

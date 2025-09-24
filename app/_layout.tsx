@@ -8,6 +8,7 @@ export default function RootLayout() {
 				<Stack.Screen name="(auth)/welcome" />
 				<Stack.Screen name="(auth)/login" />
 				<Stack.Screen name="(auth)/signUp" />
+				<Stack.Screen name="(root)/(auth)/home" />
 			</Stack>
 		</SafeAreaProvider>
 	)

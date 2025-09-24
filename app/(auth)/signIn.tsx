@@ -1,56 +1,52 @@
-import { Ionicons } from "@expo/vector-icons"
-import { router } from "expo-router"
+import CustomButton from "@/components/CustomButton"
+import InputField from "@/components/InputField"
+import { icons, images } from "@/constants"
+
+import { Link, router } from "expo-router"
 import React from "react"
-import { Text, TextInput, TouchableOpacity, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { Image, ScrollView, Text, View } from "react-native"
 
 export default function SignIn() {
 	return (
-		<SafeAreaView className="flex-1 bg-white">
-			<View className="flex h-full w-full items-center justify-center px-6">
-				<Text className="text-3xl font-bold text-blue-600 mb-10">Sign In</Text>
-
-				<View className="w-full mb-6">
-					<Text className="text-[17px] font-semibold mb-2">Phone</Text>
-					<View className="flex-row items-center border border-gray-300 rounded-full px-4">
-						<Ionicons name="call" size={20} color="gray" />
-						<TextInput
-							keyboardType="phone-pad"
-							className="flex-1 h-12 px-3"
-							placeholder="+993"
-							placeholderTextColor="#9ca3af"
-						/>
-					</View>
+		<ScrollView className="flex-1 bg-white">
+			<View className="flex-1 bg-white">
+				<View className="relative w-full h-[250px]">
+					<Image source={images.loginImage} className="z-0 w-full h-[250px]" />
 				</View>
 
-				<View className="w-full mb-8">
-					<Text className="text-[17px] font-semibold mb-2">Password</Text>
-					<View className="flex-row items-center border border-gray-300 rounded-full px-4">
-						<Ionicons name="lock-closed" size={20} color="gray" />
-						<TextInput
-							secureTextEntry={true}
-							className="flex-1 h-12 px-3"
-							placeholder="********"
-							placeholderTextColor="#9ca3af"
-						/>
-					</View>
+				<View className="p-5">
+					<InputField
+						label="Email"
+						placeholder="Enter email"
+						icon={icons.email}
+						textContentType="emailAddress"
+					/>
+
+					<InputField
+						label="Password"
+						placeholder="Enter password"
+						icon={icons.lock}
+						secureTextEntry={true}
+						textContentType="password"
+					/>
+
+					<CustomButton
+						title="Sign In"
+						onPress={() => {
+							router.replace("/(root)/(tabs)/home")
+						}}
+						className="mt-6"
+					/>
+
+					<Link
+						href="/signUp"
+						className="text-lg text-center text-general-200 mt-10"
+					>
+						Don&apos;t have an account?
+						<Text className="text-primary-500">Sign Up</Text>
+					</Link>
 				</View>
-
-				<TouchableOpacity className="bg-blue-600 w-full py-3 rounded-full shadow-md">
-					<Text className="text-center text-white font-semibold text-lg">
-						Sign In
-					</Text>
-				</TouchableOpacity>
-
-				<TouchableOpacity
-					className="mt-4"
-					onPress={() => {
-						router.replace("/(auth)/signUp")
-					}}
-				>
-					<Text className="text-blue-500">Don’t have an account? Sign Up</Text>
-				</TouchableOpacity>
 			</View>
-		</SafeAreaView>
+		</ScrollView>
 	)
 }
